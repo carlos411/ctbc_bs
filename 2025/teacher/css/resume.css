@@ -1,4 +1,4 @@
-/* ==================== 共同 ==================== */
+/* ==================== 步驟 1：共同 ==================== */
 * {
   box-sizing: border-box;
 }
@@ -11,8 +11,13 @@ body{
   background-color: #FAF3EF;
   margin: 0;
 }
+div.hr{
+  width: 100%;
+  height: 4px;
+  background-color: var(--border-color);
+}
 
-/* ==================== 步驟 1：header 區域 ==================== */
+/* ==================== 步驟 2：header 區域 ==================== */
 header.header{
   /* border: 1px solid red; */
   min-width: var(--main-width);
@@ -70,36 +75,51 @@ header.header div.content_block div.right_block div.avatar_block img{
   vertical-align: bottom;
 }
 
+/* ==================== 步驟 3：footer 區域 ==================== */
+footer.footer{
+  /* border: 1px solid red; */
+  width: 100%;
+  min-width: var(--main-width);
+  text-align: center;
+  margin: 30px 0;
+  border-top: 4px solid var(--border-color);
+  padding-top: 30px;
+}
+footer.footer p{
+  /* border: 1px solid blue; */
+  margin: 0;
+  font-style: italic;
+  color: gray;
+}
 
-/* ==================== 步驟 2：中間內容的結構 ==================== */
+
+/* ==================== 步驟 4：中間內容的結構 ==================== */
 div.full_block{
-  --my-padding: calc((100% - var(--main-width)) / 2);
-
   /* border: 1px solid black; */
   min-width: var(--main-width);
   display: flex;
+
+  --my-padding: calc((100% - var(--main-width)) / 2);
 }
 
 div.full_block main.main{
   /* border: 1px solid red; */
   flex-basis: calc(var(--main-width) - var(--aside-width) + var(--my-padding) );
-  flex-shrink: 0;
-
   border-right: 4px solid var(--border-color);
-
-  /* height: 500px; */
+  
+  flex-shrink: 0;
 }
 div.full_block aside.aside{
   /* border: 1px solid blue; */
-  flex-grow: 1;
 
+  flex-grow: 1;
   flex-basis: calc(var(--aside-width) + var(--my-padding));
+
   flex-shrink: 0;
 }
 
-/* ==================== 步驟 3：左側主內容：工作經驗區域 ==================== */
+/* ==================== 步驟 5：左側主內容：工作經驗區域 ==================== */
 main.main section.common_sec{
-  /* border: 2px solid red; */
   font-size: 0;
   padding-left: calc((100vw - var(--main-width)) / 2);
 }
@@ -110,9 +130,10 @@ main.main section.common_sec div.left_block, main.main section.common_sec div.ri
 }
 main.main section.common_sec div.left_block{
   /* border: 1px solid green; */
-  padding-left: 20px;
   width: 160px;
   margin-right: 20px;
+
+  padding-left: 20px;
   padding-top: 80px;
 }
 main.main section.common_sec div.left_block img{
@@ -121,10 +142,7 @@ main.main section.common_sec div.left_block img{
 main.main section.common_sec div.right_block{
   /* border: 1px solid black; */
   width: calc(100% - 160px - 20px);
-  padding-top: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 40px;
+  padding: 40px 20px;
 }
 main.main section.common_sec div.right_block h1.title1{
   font-size: 28px;
@@ -138,6 +156,7 @@ main.main section.common_sec div.right_block p.para{
   font-size: 18px;
 }
 main.main section.common_sec div.right_block ul.list{
+  /* border: 1px solid red; */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -171,10 +190,10 @@ main.main section.common_sec div.right_block ul.list > li a{
   text-decoration: none;
 }
 
-/* ==================== 步驟 4：不用寫 CSS ==================== */
+/* ==================== 步驟 6：不用寫 CSS ==================== */
 
 
-/* ==================== 步驟 5及步驟 6：聯絡區域、志工參與 ==================== */
+/* ==================== 步驟 7及步驟 8：聯絡方式、志工參與 ==================== */
 aside.aside section.common_sec{
   /* border: 2px solid red; */
   padding-right: calc((100vw - var(--main-width)) / 2);
@@ -183,72 +202,41 @@ aside.aside section.common_sec{
 aside.aside section.common_sec div.content_block{
   /* border: 1px solid black; */
   width: 100%;
-  padding-top: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 40px;
+  padding: 40px 20px;
 }
 aside.aside section.common_sec div.content_block h1.title1{
+  margin: 0;
   font-size: 28px;
   color: #B88B83;
-  margin: 0;
   letter-spacing: 4px;
 }
-aside.aside section.common_sec div.content_block p.para{
-  color: #5C5E43;
-  line-height: 1.5;
-  font-size: 18px;
-}
 aside.aside section.common_sec div.content_block ul.list{
+  /* border: 1px solid red; */
+  list-style: none;
   margin: 18px 0 0 0;
   padding: 0;
-  list-style: none;
-  color: #5C5E43;
-  font-size: 18px;
 }
 aside.aside section.common_sec div.content_block ul.list > li{
   /* border: 1px solid black; */
   margin-bottom: 8px;
-  position: relative;
   padding-left: 28px;
+  color: #5C5E43;
+  font-size: 18px;
+
+  position: relative;
 }
 aside.aside section.common_sec div.content_block ul.list > li:last-child{
   margin-bottom: 0;
 }
 aside.aside section.common_sec div.content_block ul.list > li img.icon{
   width: 18px;
+
   position: absolute;
   top: 4px;
   left: 0;
 }
 aside.aside section.common_sec div.content_block ul.list > li a{
+  display: inline-block;
   color: blue;
   text-decoration: none;
-  display: inline-block;
-}
-
-/* ==================== 步驟 7：footer 區域 ==================== */
-footer.footer{
-  /* border: 1px solid red; */
-  width: 100%;
-  min-width: var(--main-width);
-  text-align: center;
-  margin: 30px 0;
-  border-top: 4px solid var(--border-color);
-  padding-top: 30px;
-}
-footer.footer p{
-  margin: 0;
-  /* border: 1px solid blue; */
-  font-size: 16px;
-  font-style: italic;
-  color: gray;
-}
-
-/* ==================== 其它 ==================== */
-
-div.hr{
-  width: 100%;
-  height: 4px;
-  background-color: var(--border-color);
 }
